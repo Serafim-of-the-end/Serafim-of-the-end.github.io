@@ -22,10 +22,9 @@
   color: rgb(207, 30, 30);
 }
 
-.footer {
+footer {
   background: rgb(153, 56, 38);
   padding: 20px;
-  display: flex;
   /* justify-content: space-between; */
   color: white;
   margin: 0 auto;

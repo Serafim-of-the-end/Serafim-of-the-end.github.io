@@ -15,7 +15,6 @@
 .footer {
   background: rgb(153, 56, 38);
   padding: 20px;
-  display: flex;
   /* justify-content: space-between; */
   margin: 0 auto;
   color: white;
