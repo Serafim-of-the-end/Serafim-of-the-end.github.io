@@ -1,58 +1,103 @@
 header h1 {
-    font-size: 70px;
-    font-weight: 600;
-    /* background-image: linear-gradient(to left, #553c9a, #b393d3); */
-    /* background-image: linear-gradient(to right, #553c9a, #b393d3); */
-    /* background-image: linear-gradient(to top, #553c9a, #b393d3); */
-    /* background-image: linear-gradient(to bottom, #553c9a, #b393d3); */
-    /* Линейный градиент */
-    /* background-image: linear-gradient(to bottom left, #553c9a, #b393d3); */
-    /* background-image: linear-gradient(45deg, #553c9a, #ee4b2b); */
-    /* Градиент по диогонали, deg=градусы, груг вращения - 12-часов по часовой стрелке */
-    /* background-image: radial-gradient(to right, #553c9a 45%, #ee4b2b); */
-    /* background-image: radial-gradient(circle, #553c9a, #ee4b2b); */
-    /* background: radial-gradient(ellipse, #553c9a, #ee4b2b); */
-    /* Радиальный градиент */
-    /* background: radial-gradient(closest-side, #553c9a, #ee4b2b); */
-    /* background: radial-gradient(closest-corner, #553c9a, #ee4b2b); */
-    /* background: radial-gradient(farthest-side, #553c9a, #ee4b2b); */
-    /* background: radial-gradient(farthest-corner, #553c9a, #ee4b2b); */
-    /*  closest-side — форму градиента определяет ближайшая к центру стороной элемента;
+  font-size: 70px;
+  font-weight: 600;
+
+  /* background-image: linear-gradient(to left, #553c9a, #b393d3); */
+  /* background-image: linear-gradient(to right, #553c9a, #b393d3); */
+  /* background-image: linear-gradient(to top, #553c9a, #b393d3); */
+  /* background-image: linear-gradient(to bottom, #553c9a, #b393d3); */
+  /* Линейный градиент */
+
+  /* background-image: linear-gradient(to bottom left, #553c9a, #b393d3); */
+  /* background-image: linear-gradient(45deg, #553c9a, #ee4b2b); */
+  /* Градиент по диогонали, deg=градусы, груг вращения - 12-часов по часовой стрелке */
+
+  /* background-image: radial-gradient(to right, #553c9a 45%, #ee4b2b); */
+  /* background-image: radial-gradient(circle, #553c9a, #ee4b2b); */
+  /* background: radial-gradient(ellipse, #553c9a, #ee4b2b); */
+  /* Радиальный градиент */
+
+  /* background: radial-gradient(closest-side, #553c9a, #ee4b2b); */
+  /* background: radial-gradient(closest-corner, #553c9a, #ee4b2b); */
+  /* background: radial-gradient(farthest-side, #553c9a, #ee4b2b); */
+  /* background: radial-gradient(farthest-corner, #553c9a, #ee4b2b); */
+  /*  closest-side — форму градиента определяет ближайшая к центру стороной элемента;
         closest-corner — форму градиента определяет ближайший угол элемента;
         farthest-side —форму градиента определяет сторона элемента, удалённая от центра;
         farthest-corner — форму градиента определяет удалённый от центра угол. 
         (side-резкий переход, плохо читается; corner-более плавный, хорошо читаеться) */
-    /* background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb); */
-    /* background: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a); */
-    /* background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a); */
-    /* Процентноый переход с градиентом и постоянный цветом, КРУГ ЭТО 100%!!! */
-    /* background-image: conic-gradient(#553c9a 0%, #553c9a 33%, #ee4b2b 33%, #ee4b2b 66%, #00c2cb 66%, #00c2cb 99%); */
-    /* Круговой градиент */
-    /* background: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%); */
-    /* background-image: repeating-radial-gradient(circle closest-corner at 100px 100px, #553c9a, #ee4b2b 10%, #553c9a 20%); */
-    /* at=расположение, at X Y */
-    /* background-image: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%); */
-    background-image: repeating-radial-gradient(circle closest-corner at 100px 100px, #553c9a, #b393d3 10%, #553c9a 20%);
 
-    /* Главная схема построения градиента
+  /* background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb); */
+  /* background: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a); */
+  /* background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a); */
+  /* Процентноый переход с градиентом и постоянный цветом, КРУГ ЭТО 100%!!! */
+
+  /* background-image: conic-gradient(#553c9a 0%, #553c9a 33%, #ee4b2b 33%, #ee4b2b 66%, #00c2cb 66%, #00c2cb 99%); */
+  /* Круговой градиент */
+
+  /* background: repeating-linear-gradient(to right, #553c9a, #ee4b2b 10%, #553c9a 20%); */
+  /* background-image: repeating-radial-gradient(circle closest-corner at 100px 100px, #553c9a, #ee4b2b 10%, #553c9a 20%); */
+  /* at=расположение, at X Y */
+
+  /* background-image: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%); */
+  background-image: repeating-radial-gradient(
+    circle closest-corner at 100px 100px,
+    #553c9a,
+    #b393d3 10%,
+    #553c9a 20%
+  );
+
+  /* Главная схема построения градиента
     repeating-radial-gradient(<ending-shape> <size> <position> ,<color1>, <color2>, <color3>); */
-    color: transparent;
-    /* transparent=фон видно прямо за заголовком */
-    background-clip: text;
-    /* background-clip=фон не выйдет за пределы элемента */
-    -webkit-background-clip: text;
-  }
+  color: transparent;
+  /* transparent=фон видно прямо за заголовком */
+  background-clip: text;
+  /* background-clip=фон не выйдет за пределы элемента */
+  -webkit-background-clip: text;
+}
 
-  header h2 {
-    font-size: 50px;
-    font-weight: 400;
-    color: black;
-  }
+header h2 {
+  font-size: 50px;
+  font-weight: 400;
+  color: black;
+}
 
-  .footer {
-    background: rgb(153, 56, 38);
-    padding: 20px;
-    /* justify-content: space-between; */
-    margin: 0 auto;
-    color: white;
-  }
+footer {
+  background: rgb(153, 56, 38);
+  padding: 20px;
+  /* justify-content: space-between; */
+  margin: 0 auto;
+  color: white;
+}
+
+.icon {
+  position: relative;
+  /* Позиция: нормальное(настраиваемое) */
+  display: inline-block;
+  /* Структура: блоками с одну строку, */
+  width: 44px;
+  height: 44px;
+  background-color: red;
+}
+
+.icon_home {
+  background-image: url(/photo/social_image.png);
+  background-size: 800px;
+  background-position: -27px -39px;
+}
+
+.icon_mail {
+  background-image: url(/photo/social_image.png);
+  background-size: 800px;
+  background-position: -86px -39px;
+}
+
+iconify-icon {
+  color: grey;
+  font-size: 72px;
+}
+
+.icon-angel {
+  color: red;
+  font-size: 72px;
+}
