@@ -9,12 +9,15 @@ let isSwitchBlocked = false; // ❗ Блокировка смены картин
 // Функция создания и добавления спам-картинок на экран
 function spamImage() {
   let img = document.createElement("img");
-  img.src = "photo/Маленькое_сердечко_2.png"; // Здесь можно заменить картинку
+  img.src = "photo/Маленькое_сердечко_2.png"; // Моя картинка
   img.classList.add("spam-img");
 
-  // Рандомное расположение картинки
-  img.style.left = Math.random() * window.innerWidth + "px";
-  img.style.top = Math.random() * window.innerHeight + "px";
+  let screenWidth = window.innerWidth; // ✅ Получаем ширину экрана
+  let screenHeight = window.innerHeight; // ✅ Получаем высоту экрана
+
+  // ✅ Генерируем случайные координаты ТОЛЬКО в пределах экрана
+  img.style.left = Math.random() * (screenWidth - 100) + "px";  
+  img.style.top = Math.random() * (screenHeight - 100) + "px";  
 
   // Рандомный поворот от -60° до 60°
   let rotation = Math.random() * 120 - 60;
@@ -34,7 +37,8 @@ function startSpam() {
     isSpamming = true;
     canStop = false; // ❗ Запрещаем остановку спама
 
-    spamInterval = setInterval(spamImage, 10);
+    // Интервал между каждой картинкой спама по 20 мс
+    spamInterval = setInterval(spamImage, 20);
 
     // ⏳ Через 3 секунды после старта спама можно будет его остановить
     setTimeout(() => {

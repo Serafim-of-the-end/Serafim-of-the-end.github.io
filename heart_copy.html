@@ -9,12 +9,16 @@
         body {
             margin: 0;
             overflow: hidden;
+            /* Запрещаем прокрутку */
             position: relative;
             background-color: black;
             color: white;
             font-size: 24px;
             user-select: none;
             height: 100vh;
+            /* Высота в 100% экрана */
+            width: 100vw;
+            /* Ширина в 100% экрана */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,7 +27,7 @@
 
         img.spam-img {
             position: absolute;
-            width: 120px;
+            width: 100px;
             height: auto;
             pointer-events: none;
             transition: transform 0.2s ease-out;
@@ -60,9 +64,12 @@
             img.src = "photo/Маленькое_сердечко_2.png"; // Здесь можно заменить картинку
             img.classList.add("spam-img");
 
-            // Рандомное расположение картинки
-            img.style.left = Math.random() * window.innerWidth + "px";
-            img.style.top = Math.random() * window.innerHeight + "px";
+            let screenWidth = window.innerWidth;  // ✅ Получаем ширину экрана
+            let screenHeight = window.innerHeight; // ✅ Получаем высоту экрана
+
+            // ✅ Генерируем случайные координаты ТОЛЬКО в пределах экрана
+            img.style.left = Math.random() * (screenWidth - 100) + "px";
+            img.style.top = Math.random() * (screenHeight - 100) + "px";
 
             // Рандомный поворот от -60° до 60°
             let rotation = Math.random() * 120 - 60;
