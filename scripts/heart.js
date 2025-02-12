@@ -1,0 +1,92 @@
+let spamInterval = null; // Интервал для спама картинок
+let isSpamming = false; // Флаг: идёт ли сейчас спам
+let minSpamTime = 3000; // ❗ Спам нельзя остановить первые 3 секунды после запуска
+let canStop = false; // Можно ли остановить спам
+let spamTimeout = null; // Таймер задержки перед началом спама
+let isSecondImageActive = false; // Флаг: активна ли вторая картинка
+let isSwitchBlocked = false; // ❗ Блокировка смены картинки (чтобы нельзя было сменить обратно)
+
+// Функция создания и добавления спам-картинок на экран
+function spamImage() {
+  let img = document.createElement("img");
+  img.src = "photo/Маленькое_сердечко_2.png"; // Здесь можно заменить картинку
+  img.classList.add("spam-img");
+
+  // Рандомное расположение картинки
+  img.style.left = Math.random() * window.innerWidth + "px";
+  img.style.top = Math.random() * window.innerHeight + "px";
+
+  // Рандомный поворот от -60° до 60°
+  let rotation = Math.random() * 120 - 60;
+  img.style.transform = `rotate(${rotation}deg)`;
+
+  document.body.appendChild(img);
+
+  // Удаляем картинку через 3 секунд
+  setTimeout(() => {
+    img.remove();
+  }, 3000);
+}
+
+// Функция запуска спама
+function startSpam() {
+  if (!isSpamming) {
+    isSpamming = true;
+    canStop = false; // ❗ Запрещаем остановку спама
+
+    spamInterval = setInterval(spamImage, 10);
+
+    // ⏳ Через 3 секунды после старта спама можно будет его остановить
+    setTimeout(() => {
+      canStop = true;
+      isSwitchBlocked = false; // ❗ Теперь можно сменить картинку обратно
+    }, minSpamTime);
+  }
+}
+
+// Функция остановки спама
+function stopSpam() {
+  if (isSpamming && canStop) {
+    // Можно остановить только если прошло 3 секунды
+    clearInterval(spamInterval);
+    isSpamming = false;
+  }
+}
+
+let avatarka = document.getElementById("avatar");
+
+avatarka.addEventListener("click", function (event) {
+  event.stopPropagation(); // Останавливаем всплытие события
+
+  if (isSwitchBlocked) return; // ❗ Если картинка заблокирована, не даём её менять
+
+  let mySrc = avatarka.getAttribute("src");
+
+  if (mySrc === "photo/Сердце_Tap.png") {
+    avatarka.setAttribute("src", "photo/Сердце_I_love_you_6.png");
+    isSecondImageActive = true;
+    isSwitchBlocked = true; // ❗ Блокируем смену картинки
+
+    // ⏳ Задержка перед стартом спама (2 секунды)
+    clearTimeout(spamTimeout);
+    spamTimeout = setTimeout(() => {
+      startSpam();
+    }, 2000);
+  } else {
+    // Если мы здесь, значит можно сменить картинку обратно
+    avatarka.setAttribute("src", "photo/Сердце_Tap.png");
+    isSecondImageActive = false;
+    isSwitchBlocked = false;
+  }
+});
+
+// Клик в любом месте экрана останавливает спам, если прошло 3 секунды
+document.documentElement.addEventListener("click", function (event) {
+  stopSpam();
+});
+
+// Клик по аватарке тоже останавливает спам
+avatarka.addEventListener("click", function (event) {
+  event.stopPropagation();
+  stopSpam();
+});

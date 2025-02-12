@@ -1,0 +1,32 @@
+#avatar {
+  width: 100%;
+}
+
+/* Стили для спам-картинок */
+.spam-img {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+  /* Отключаем возможность взаимодействия */
+  transition: transform 0.2s ease-out;
+}
+
+/* Сбрасываем отступы, скрываем прокрутку */
+/* body {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+} */
+
+footer {
+  background: rgb(153, 56, 38);
+  padding: 20px;
+  /* justify-content: space-between; */
+  color: white;
+  margin: 0 auto;
+}
